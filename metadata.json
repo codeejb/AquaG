@@ -1,0 +1,6 @@
+{
+  "name": "AquaG Command",
+  "description": "Mission-critical flood nowcast and emergency intelligence command platform for urban hydrological risk management, GIS telemetry, and smart drainage response.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

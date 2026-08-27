@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-headline: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #0d1516;
+    color: #dce4e5;
+  }
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+}
+
+.glass-panel {
+  background: rgba(26, 31, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(25, 33, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 73, 76, 0.4);
+}
+
+.pulse-dot {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 7px rgba(255, 82, 82, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+.pulse-cyan {
+  animation: pulse-cyan-anim 2.5s infinite;
+}
+
+@keyframes pulse-cyan-anim {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(0, 229, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+
+.pulse-amber {
+  animation: pulse-amber-anim 2s infinite;
+}
+
+@keyframes pulse-amber-anim {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(254, 201, 49, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(254, 201, 49, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(254, 201, 49, 0); }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1516;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242b2d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b494c;
+}
+
+/* Leaflet Dark Popup Theme */
+.leaflet-popup-content-wrapper,
+.elements-popup .leaflet-popup-content-wrapper {
+  background: rgba(19, 29, 30, 0.95) !important;
+  color: #dce4e5 !important;
+  border: 1px solid rgba(59, 73, 76, 0.7) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 229, 255, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  padding: 2px !important;
+}
+
+.leaflet-popup-tip,
+.elements-popup .leaflet-popup-tip {
+  background: rgba(19, 29, 30, 0.95) !important;
+  border: 1px solid rgba(59, 73, 76, 0.7) !important;
+}
+
+.leaflet-popup-close-button {
+  color: #849396 !important;
+  padding: 6px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #00e5ff !important;
+}
+
+.leaflet-container {
+  background-color: #0d1516 !important;
+}
+
