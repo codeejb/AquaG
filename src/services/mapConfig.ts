@@ -1,12 +1,11 @@
 const MAP_KEY_STORAGE = 'AQUAG_MAP_API_KEY';
-const DEFAULT_MAP_API_KEY = 'cb1_2ake_1_a1a4e005a56a759aedc49f88';
 
 export const getMapApiKey = (): string => {
   if (typeof window !== 'undefined') {
     const stored = localStorage.getItem(MAP_KEY_STORAGE);
     if (stored) return stored;
   }
-  return (import.meta as any).env?.VITE_MAP_API_KEY || DEFAULT_MAP_API_KEY;
+  return (import.meta as any).env?.VITE_MAP_API_KEY || '';
 };
 
 export const setMapApiKey = (key: string): void => {
@@ -14,7 +13,7 @@ export const setMapApiKey = (key: string): void => {
     if (key.trim()) {
       localStorage.setItem(MAP_KEY_STORAGE, key.trim());
     } else {
-      localStorage.setItem(MAP_KEY_STORAGE, DEFAULT_MAP_API_KEY);
+      localStorage.removeItem(MAP_KEY_STORAGE);
     }
   }
 };

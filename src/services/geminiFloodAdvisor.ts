@@ -2,14 +2,13 @@ import { GoogleGenAI } from '@google/genai';
 import { IncidentAlert, TimelineFrame, PumpStation } from '../types';
 
 const STORAGE_KEY = 'AQUAG_GEMINI_API_KEY';
-const DEFAULT_KEY = 'cb1_2ake_1_a1a4e005a56a759aedc49f88';
 
 export const getGeminiApiKey = (): string => {
   if (typeof window !== 'undefined') {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) return stored;
   }
-  return (import.meta as any).env?.VITE_GEMINI_API_KEY || DEFAULT_KEY;
+  return (import.meta as any).env?.VITE_GEMINI_API_KEY || '';
 };
 
 export const setGeminiApiKey = (key: string): void => {

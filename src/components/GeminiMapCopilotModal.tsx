@@ -45,22 +45,22 @@ export const GeminiMapCopilotModal: React.FC<GeminiMapCopilotModalProps> = ({
 
   useEffect(() => {
     const key = getGeminiApiKey();
-    setApiKey(key || 'cb1_2ake_1_a1a4e005a56a759aedc49f88');
-    setIsKeySaved(true);
+    setApiKey(key || '');
+    setIsKeySaved(Boolean(key));
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   const handleSaveKey = () => {
-    const keyToSave = apiKey.trim() || 'cb1_2ake_1_a1a4e005a56a759aedc49f88';
+    const keyToSave = apiKey.trim();
     setGeminiApiKey(keyToSave);
     setApiKey(keyToSave);
-    setIsKeySaved(true);
+    setIsKeySaved(Boolean(keyToSave));
     setError(null);
   };
 
   const handleRunAssessment = async (customPrompt?: string) => {
-    const activeKey = apiKey.trim() || getGeminiApiKey() || 'Feescb1_2ake_1_a1a4e005a56a759aedc49f88';
+    const activeKey = apiKey.trim() || getGeminiApiKey();
     setLoading(true);
     setError(null);
 
